@@ -24,14 +24,18 @@ class APIAutomation:
     It includes functionalities to perform CRUD operations on posts and comments,
     implements a retry strategy for robustness, and logs request and response details.
     
+    Attributes:
+        BASE_URL (str): Base URL for the API endpoint.
+        session (requests.Session): Session object to handle requests with retries.
+    
     Methods:
-    - get_posts(post_id): Fetches a specific post by ID.
-    - get_post_comments(post_id): Retrieves comments associated with a post.
-    - create_post(title, body, user_id): Creates a new post with the given details.
-    - update_post(post_id, title, body, user_id): Updates an existing post.
-    - patch_post(post_id, title, body, user_id): Partially updates a post.
-    - delete_post(post_id): Deletes a post by ID.
-    - _make_request(method, url, **kwargs): Handles API requests with retry strategy.
+        get_posts(post_id): Fetches a specific post by ID.
+        get_post_comments(post_id): Retrieves comments associated with a post.
+        create_post(title, body, user_id): Creates a new post with the given details.
+        update_post(post_id, title, body, user_id): Updates an existing post.
+        patch_post(post_id, title, body, user_id): Partially updates a post.
+        delete_post(post_id): Deletes a post by ID.
+        _make_request(method, url, **kwargs): Handles API requests with retry strategy.
     """
     BASE_URL = "https://jsonplaceholder.typicode.com"
     
